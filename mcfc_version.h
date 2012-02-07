@@ -54,16 +54,15 @@ void mcfc_version(double* localTensor, double dt, double* c0)
       localTensor[(i_r_0 + 3 * i_r_1)] = 0.0;
       for(int i_g = 0; i_g < 6; i_g++)
       {
-        double l39[2][2] = { { c_q0[i_g][1][1], -1 * c_q0[i_g][0][1] }, { -1 * c_q0[i_g][1][0], c_q0[i_g][0][0] } };
-        double l53[2][2] = { { c_q0[i_g][1][1], -1 * c_q0[i_g][0][1] }, { -1 * c_q0[i_g][1][0], c_q0[i_g][0][0] } };
-        //localTensor[(i_r_0 + 3 * i_r_1)] +=  -1 * CG1[i_r_0][i_g] * CG1[i_r_1][i_g] * (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]) * w[i_g];
+        double detJ = (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]);
+        double invJ[2][2] = { { c_q0[i_g][1][1]/detJ, -1 * c_q0[i_g][0][1]/detJ }, { -1 * c_q0[i_g][1][0]/detJ, c_q0[i_g][0][0]/detJ } };
         for(int i_d_5 = 0; i_d_5 < 2; i_d_5++)
         {
           for(int i_d_3 = 0; i_d_3 < 2; i_d_3++)
           {
             for(int i_d_9 = 0; i_d_9 < 2; i_d_9++)
             {
-              localTensor[(i_r_0 + 3 * i_r_1)] += ((l53[i_d_5][i_d_3] / (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0])) * d_CG1[i_r_0][i_g][i_d_3] * (l39[i_d_3][i_d_9] / (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0])) * d_CG1[i_r_1][i_g][i_d_9]) * (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]) * w[i_g];
+              localTensor[(i_r_0 + 3 * i_r_1)] += invJ[i_d_5][i_d_3]*d_CG1[i_d_3][i_r_0][i_g]*invJ[i_d_3][i_d_9]*d_CG1[i_d_9][i_r_1][i_g]* detJ * w[i_g];
             };
           };
         };
