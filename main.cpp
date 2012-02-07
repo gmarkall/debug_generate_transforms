@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
 
   coordinates[0][0] = 0.0;
   coordinates[0][1] = 0.0;
-  coordinates[1][0] = 0.0;
-  coordinates[1][1] = 1.0;
-  coordinates[2][0] = 1.0;
-  coordinates[2][1] = 0.0;
+  coordinates[1][0] = 1.0;
+  coordinates[1][1] = 0.0;
+  coordinates[2][0] = 0.0;
+  coordinates[2][1] = 1.0;
   
   first_cell.coordinates = coordinates;
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
   double *B = (double*)malloc(sizeof(double*)*9);
 
-  double mcfc_coords[6] = {0.0, 0.0, 0.0, 1.0, 1.0, 0.0};
+  double mcfc_coords[6] = {0.0, 0.0, 1.0, 0.0, 0.0, 1.0};
 
   mcfc_version(B, 0.0, mcfc_coords);
 
