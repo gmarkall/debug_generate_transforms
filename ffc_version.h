@@ -1268,7 +1268,8 @@ public:
         for (unsigned int k = 0; k < 3; k++)
         {
           // Number of operations to compute entry: 21
-          A[j*3 + k] += (FE0[ip][j]*FE0[ip][k]*(-1.0) + (((K_00*FE0_D10[ip][j] + K_10*FE0_D01[ip][j]))*((K_00*FE0_D10[ip][k] + K_10*FE0_D01[ip][k])) + ((K_01*FE0_D10[ip][j] + K_11*FE0_D01[ip][j]))*((K_01*FE0_D10[ip][k] + K_11*FE0_D01[ip][k]))))*W3[ip]*det;
+          A[j*3 + k] += (FE0[ip][j]*FE0[ip][k]*(-1.0))*W3[ip]*det;
+          //A[j*3 + k] += (FE0[ip][j]*FE0[ip][k]*(-1.0) + (((K_00*FE0_D10[ip][j] + K_10*FE0_D01[ip][j]))*((K_00*FE0_D10[ip][k] + K_10*FE0_D01[ip][k])) + ((K_01*FE0_D10[ip][j] + K_11*FE0_D01[ip][j]))*((K_01*FE0_D10[ip][k] + K_11*FE0_D01[ip][k]))))*W3[ip]*det;
         }// end loop over 'k'
       }// end loop over 'j'
     }// end loop over 'ip'
