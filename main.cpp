@@ -30,8 +30,14 @@ int main(int argc, char *argv[])
   ffc_version->tabulate_tensor(A, (double**)0, first_cell);
 
   printf("FFC version:\n\n");
-  for (int i=0; i<9; ++i)
-    printf("A[%d]: %f\n", i, A[i]);
+  for (int i=0; i<3; ++i)
+  {
+    for (int j=0; j<3; ++j)
+    {
+      printf("%8.6f ", A[i*3 + j]);
+    }
+    printf("\n");
+  }
   printf("\n");
 
   double *B = (double*)malloc(sizeof(double*)*9);
@@ -41,8 +47,13 @@ int main(int argc, char *argv[])
   mcfc_version(B, 0.0, mcfc_coords);
 
   printf("MCFC version:\n\n");
-  for (int i=0; i<9; ++i)
-    printf("B[%d]: %f\n", i, B[i]);
+  for (int i=0; i<3; ++i)
+  {
+    for (int j=0; j<3; ++j)
+    {
+      printf("%8.6f ", B[i*3 + j]);
+    }
+    printf("\n");
+  }
   printf("\n");
-
 }
