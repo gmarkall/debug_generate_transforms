@@ -56,7 +56,7 @@ void mcfc_version(double* localTensor, double dt, double* c0)
       {
         double l39[2][2] = { { c_q0[i_g][1][1], -1 * c_q0[i_g][0][1] }, { -1 * c_q0[i_g][1][0], c_q0[i_g][0][0] } };
         double l53[2][2] = { { c_q0[i_g][1][1], -1 * c_q0[i_g][0][1] }, { -1 * c_q0[i_g][1][0], c_q0[i_g][0][0] } };
-        localTensor[(i_r_0 + 3 * i_r_1)] +=  -1 * CG1[i_r_0][i_g] * CG1[i_r_1][i_g] * (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]) * w[i_g];
+        //localTensor[(i_r_0 + 3 * i_r_1)] +=  -1 * CG1[i_r_0][i_g] * CG1[i_r_1][i_g] * (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]) * w[i_g];
         for(int i_d_5 = 0; i_d_5 < 2; i_d_5++)
         {
           for(int i_d_3 = 0; i_d_3 < 2; i_d_3++)
