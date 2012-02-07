@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
   printf("FFC version:\n\n");
   for (int i=0; i<9; ++i)
     printf("A[%d]: %f\n", i, A[i]);
+  printf("\n");
 
   double *B = (double*)malloc(sizeof(double*)*9);
 
@@ -42,5 +43,6 @@ int main(int argc, char *argv[])
   printf("MCFC version:\n\n");
   for (int i=0; i<9; ++i)
     printf("B[%d]: %f\n", i, B[i]);
+  printf("\n");
 
 }
