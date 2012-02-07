@@ -71,7 +71,7 @@ void mcfc_version(double* localTensor, double dt, double* c0)
           {
             for(int i_d_9 = 0; i_d_9 < 2; i_d_9++)
             {
-              localTensor[(i_r_0 + 3 * i_r_1)] += invJ[i_d_5][i_d_3]*d_CG1[i_d_3][i_r_0][i_g]*invJ[i_d_3][i_d_9]*d_CG1[i_d_9][i_r_1][i_g]* detJ * w[i_g];
+              localTensor[(i_r_0 + 3 * i_r_1)] += invJ[i_d_5][i_d_3]*d_CG1[i_r_0][i_g][i_d_3]*invJ[i_d_3][i_d_9]*d_CG1[i_r_1][i_g][i_d_9]* detJ * w[i_g];
             };
           };
         };
