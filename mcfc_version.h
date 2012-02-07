@@ -56,6 +56,15 @@ void mcfc_version(double* localTensor, double dt, double* c0)
       {
         double detJ = (c_q0[i_g][0][0] * c_q0[i_g][1][1] + -1 * c_q0[i_g][0][1] * c_q0[i_g][1][0]);
         double invJ[2][2] = { { c_q0[i_g][1][1]/detJ, -1 * c_q0[i_g][0][1]/detJ }, { -1 * c_q0[i_g][1][0]/detJ, c_q0[i_g][0][0]/detJ } };
+        // Print invJ:
+        if (i_r_0 == 0 && i_r_1 == 0 && i_g == 0)
+        {
+          printf("Inverse of Jacobian:\n");
+          printf("%f %f\n", invJ[0][0], invJ[0][1]);
+          printf("%f %f\n", invJ[1][0], invJ[1][1]);
+          printf("\n");
+        }
+
         for(int i_d_5 = 0; i_d_5 < 2; i_d_5++)
         {
           for(int i_d_3 = 0; i_d_3 < 2; i_d_3++)

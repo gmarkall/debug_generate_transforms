@@ -1218,6 +1218,11 @@ public:
     const double K_10 = -J_10 / detJ;
     const double K_11 =  J_00 / detJ;
     
+    printf("Inverse of jacobian:\n");
+    printf("%f %f\n", K_00, K_01);
+    printf("%f %f\n", K_10, K_11);
+    printf("\n");
+
     // Set scale factor
     const double det = std::abs(detJ);
     
