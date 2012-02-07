@@ -56,4 +56,12 @@ int main(int argc, char *argv[])
     printf("\n");
   }
   printf("\n");
+
+  delete ffc_version;
+  free(coordinates[0]);
+  free(coordinates[1]);
+  free(coordinates[2]);
+  free(coordinates);
+  free(A);
+  free(B);
 }
